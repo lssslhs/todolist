@@ -1,0 +1,25 @@
+{
+  "name": "todolist",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Michael"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lssslhs/todolist",
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "jquery": "~2.1.1",
+    "angular-route": "1.4.x",
+    "angular-resource": "1.4.x",
+    "angular-animate": "1.4.x"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
