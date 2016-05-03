@@ -7,5 +7,11 @@
 		<div clsas="col-2">edit button</div>
 		<div class="col-2">delete button</div>
 	</div>
-	<div class="row">Add task</div>
+	<div class="row">
+		<div class="col-12">
+			<input type="text" ng-model="task.description">
+			<input type="datetime" ng-model="task.time">
+			<a href="#" class="button" ng-click="addTask()">Add Task</a>
+		</div>
+	</div>
 </div>

@@ -2,6 +2,10 @@
 <html lang="eng">
 <head>
 	<title>todolist</title>
+</head>
+
+<body ng-app="app">
+	<div ng-view></div>	
 	<script src="../../bower_components/angular/angular.min.js"></script>
 	<script src="../../bower_components/angular-route/angular-route.min.js"></script>
 	<script src="../../bower_components/angular-resource/angular-resource.min.js"></script>
@@ -9,10 +13,7 @@
 	<script src="./app/app.js"></script>
 	<script src="./app/todolist/todolist.module.js"></script>
 	<script src="./app/todolist/todolist.controller.js"></script>
-</head>
-
-<body ng-app="app">
-	<div ng-view></div>	
+	<script src="./app/todolist/todolist.service.js"></script>
 </body>
 
 </html>

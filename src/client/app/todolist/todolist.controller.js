@@ -5,24 +5,31 @@
 		   .controller('TodoListCtrl', TodoListCtrl);
 
 
-	TodoListCtrl.$inject = ['$scope']
+	TodoListCtrl.$inject = ['$scope', 'todolistservice']
 
-	function TodoListCtrl($scope) {
+	function TodoListCtrl($scope, todolistservice) {
 		$scope.tasklist = [];
-		var task1 = {
-			number: 1,
-			description: 'this is a test task',
-			time: new Date(),
-		};
 
-		var task2 = {
-			number: 2,
-			description: 'this is a test task 2',
-			time: new Date(),
-		};
 
-		$scope.tasklist.push(task1);
-		$scope.tasklist.push(task2);
+		//get all task
+		todolistservice.getTaskList().then(function(data){
+			$scope.tasklist = data.tasklist;
+		});
+
+		$scope.task = {
+			description: '',
+			time: new Date()
+		}
+
+		$scope.addTask = function() {
+			$scope.task.time = new Date();
+			todolistservice.createTask($scope.task).then(function(data) {
+				if(data.success) {
+					$scope.tasklist.push(data.task);
+				}
+			});
+		}
+
 	}
 
 }();
