@@ -67,8 +67,9 @@ var Api = {
 	},
 
 	deleteTask: function(req, res, next) {
-		var data = req.body;
-		Task.remove({'_id': data._id}, function(err) {
+		var _id = req.query._id;
+
+		Task.remove({'_id': _id}, function(err) {
 			if (err) {
 				throw err;
 			}

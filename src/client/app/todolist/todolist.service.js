@@ -36,21 +36,42 @@
 			var deferred = $q.defer();
 
 			$http.post('/api/todolist', task)
-				.then(function(data){
-					deferred.resolve(data.data);
-				})
-				.catch(function(err) {
-					deferred.reject(err);
-				});
+					.then(function(data){
+						deferred.resolve(data.data);
+					})
+					.catch(function(err) {
+						deferred.reject(err);
+					});
 
 			return deferred.promise;
 		}
 
 		function updateTask(task) {
 
+			var deferred = $q.defer();
+
+			$http.put('/api/todolist', task)
+					.then(function(data){
+						deferred.resolve(data.data);
+					})
+					.catch(function(err){
+						deferred.reject(err);
+					});
+
+			return deferred.promise;
 		}
 
 		function deleteTask(task) {
+			var deferred = $q.defer();
+			$http.delete('/api/todolist', {params: {'_id':task._id}})
+					.then(function(data){
+						deferred.resolve(data.data);
+					})
+					.catch(function(err){
+						deferred.reject(err);
+					})
+
+			return deferred.promise;
 
 		}
 	}

@@ -1,16 +1,22 @@
 <h1>TBD</h1>
 <div class="todolist-block">
 	<div class="row" ng-repeat="task in tasklist">
-		<div class="col-2">{{task.number}}</div>
-		<div class="col-3">{{task.description}}</div>
-		<div class="col-3">{{task.time}}</div>
-		<div clsas="col-2">edit button</div>
-		<div class="col-2">delete button</div>
+		<div class="col-2">{{$index}}</div>
+		<div class="col-3">
+			<div ng-hide="task.isEdit">{{task.description}}</div>
+			<input ng-show="task.isEdit" type="text" ng-model="task.description">
+		</div>
+		<div class="col-3">
+			<div ng-hide="task.isEdit">{{task.time}}</div>
+		</div>
+		<div clsas="col-2" ng-hide="task.isEdit" ng-click="toggleEdit(task)">edit button</div>
+		<div class="col-2" ng-hide="task.isEdit" ng-click="deleteTask(task)">delete button</div>
+		<div clsas="col-2" ng-show="task.isEdit" ng-click="saveTask(task)">save button</div>
+		<div class="col-2" ng-show="task.isEdit" ng-click="toggleEdit(task)">cancel button</div>
 	</div>
 	<div class="row">
 		<div class="col-12">
 			<input type="text" ng-model="task.description">
-			<input type="datetime" ng-model="task.time">
 			<a href="#" class="button" ng-click="addTask()">Add Task</a>
 		</div>
 	</div>
