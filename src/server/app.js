@@ -22,6 +22,25 @@ var environment = process.env.NODE_ENV
 ,   port = process.env.PORT || 3007;
 
 /**********************************************************
+* Connect MongoDB, Bootstrap models and Config passport  *
+**********************************************************/
+
+var db_url = process.env.MONGODB_DB_URL || 'mongodb://127.0.0.1:27017/todolist';
+require("mongoose").connect(db_url, function (err) {
+if (err) {
+  console.log(err, err.stack);
+} else {
+  console.log("Connected to mongodb.");
+}
+});
+
+//get all models
+var modelsPath = path.join(__dirname, "models");
+fs.readdirSync(modelsPath).forEach(function(file) {
+require(modelsPath + "/" + file);
+});
+
+/**********************************************************
 *                     Configuration                      *
 **********************************************************/
 
@@ -34,6 +53,9 @@ app.use(bodyParser.json());
 app.use(compress());
 app.use(logger('dev'));
 app.use(cors());
+
+var route = require('./routes/index.js');
+app.use('/api', route);
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
