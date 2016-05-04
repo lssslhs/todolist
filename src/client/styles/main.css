@@ -351,6 +351,7 @@ th{
 	text-align: center;
 	font-size: 16px;
 	padding: 20px 0 20px 0px;
+	min-height: 80px;
 }
 
 .task-input {
@@ -358,9 +359,33 @@ th{
 	width: 60%
 }
 
+.button-add-task {
+	float:right;
+}
+
 @media only screen and (min-width: 440px) {
 	.task-input {
 		width: 70%
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.task-input {
+		width: 75%
+	}
+
+	.button-add-task{
+		width: 25%;
+	}
+}
+
+@media only screen and (min-width: 1028px) {
+	.task-input {
+		width: 80%
+	}
+
+	.button-add-task{
+		width: 20%;
 	}
 }
 
@@ -385,7 +410,7 @@ th{
 .task-each-number {
 	width: 10%;
 	text-align: left;
-	display: inline-block;
+	float: left;
 }
 
 .task-each-time {
@@ -423,11 +448,10 @@ th{
 	float: left;
 }
 
-.task-button {
+.task-each-button {
 	width: 20%;
 	text-align: right;
 	display: inline-block;
-	padding-right: 17px;
 }
 
 .task-item {
@@ -464,6 +488,51 @@ th{
 	transition: all 0.2s ease-in;
 }
 
+@media only screen and (min-width: 600px) {
+	.task-each-input{
+		width: 60%;
+		float: left;
+	}
+
+	.finish-edit {
+		width: 20%;
+		padding: 6px 0;
+	}
+}
+
+
+@media only screen and (min-width: 1028px) {
+
+	.task-each-number {
+		width: 3%;
+	}
+
+	.task-each-description-block{
+		width: 60%;
+	}
+
+	.task-each-time {
+		width: 30%;
+		display: inline-block;
+		float: none;
+	}
+
+	.task-each-button {
+		width: auto;
+	}
+
+	.task-each-input{
+		width: 65%;
+		float: none;
+	}
+
+	.finish-edit {
+		width: 15%;
+		float: none;
+		display: inline-block;
+		padding: 6px 0;
+	}
+}
 
 /*-----------------------------------------*/
 /* MEDIA QUERIES */
