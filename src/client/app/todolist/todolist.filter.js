@@ -7,10 +7,15 @@
 	function timefilter() {
 		return function(time) {
 			if (typeof(time) === 'string') {
-				var date = time.split('T')[0].split('-').join('/');
-				var timeTokens = time.split('T')[1].split(':');
+				var dateobj = new Date(time);
 
-				return date + ' ' + timeTokens[0] + ':' + timeTokens[1];
+
+				var year = dateobj.getFullYear();
+				var month = dateobj.getMonth()+1 < 10 ? '0' + (dateobj.getMonth()+1) : (dateobj.getMonth()+1);
+				var date = dateobj.getDate() < 10 ? '0' + dateobj.getDate() : dateobj.getDate();
+
+				return  year + '/' + month + '/' + date
+						+ ' ' + dateobj.getHours() + ':' + dateobj.getMinutes();
 			}
 			else {
 
