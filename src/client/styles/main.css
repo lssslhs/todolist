@@ -500,6 +500,37 @@ th{
 	}
 }
 
+@media only screen and (min-width: 720px) {
+	.task-each-number {
+		width: 5%;
+	}
+
+	.task-each-description-block{
+		width: 50%;
+	}
+
+	.task-each-time {
+		width: 25%;
+		display: inline-block;
+		float: none;
+	}
+
+	.task-each-button {
+		width: auto;
+	}
+
+	.task-each-input{
+		width: 65%;
+	}
+
+	.finish-edit {
+		width: 15%;
+		float: none;
+		display: inline-block;
+		padding: 6px 0;
+	}
+}
+
 
 @media only screen and (min-width: 1028px) {
 
@@ -529,8 +560,6 @@ th{
 	.finish-edit {
 		width: 15%;
 		float: none;
-		display: inline-block;
-		padding: 6px 0;
 	}
 }
 

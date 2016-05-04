@@ -25,6 +25,7 @@
 			todolistservice.createTask($scope.task).then(function(data) {
 				if(data.success) {
 					$scope.tasklist.push(data.task);
+					$scope.task.description = '';
 				}
 			});
 		}
