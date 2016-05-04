@@ -1,23 +1,24 @@
-<h1>TBD</h1>
-<div class="todolist-block">
-	<div class="row" ng-repeat="task in tasklist">
-		<div class="col-2">{{$index}}</div>
-		<div class="col-3">
-			<div ng-hide="task.isEdit">{{task.description}}</div>
-			<input ng-show="task.isEdit" type="text" ng-model="task.description">
-		</div>
-		<div class="col-3">
-			<div ng-hide="task.isEdit">{{task.time}}</div>
-		</div>
-		<div clsas="col-2" ng-hide="task.isEdit" ng-click="toggleEdit(task)">edit button</div>
-		<div class="col-2" ng-hide="task.isEdit" ng-click="deleteTask(task)">delete button</div>
-		<div clsas="col-2" ng-show="task.isEdit" ng-click="saveTask(task)">save button</div>
-		<div class="col-2" ng-show="task.isEdit" ng-click="toggleEdit(task)">cancel button</div>
-	</div>
-	<div class="row">
-		<div class="col-12">
-			<input type="text" ng-model="task.description">
+<main>
+	<section class="container-main">
+		<h1 class="heading-primary">TodoList</h1>
+		<div class="add-task-block">
+			<input type="text" class="input-text task-input" ng-model="task.description">
 			<a href="#" class="button" ng-click="addTask()">Add Task</a>
 		</div>
-	</div>
-</div>
+		<ul class="list-block grid-parent ul-base">
+			<li class="task-each grid-child" ng-repeat="task in tasklist">
+				<div class="task-item task-each-number">{{$index}}</div>
+				<div class="task-each-description-block">
+					<div class="task-item task-each-description" ng-hide="task.isEdit">{{task.description}}</div>
+					<input class="task-item input-text task-each-input" ng-show="task.isEdit" type="text" ng-model="task.description">
+					<a class="task-item task-edit task-button" ng-hide="task.isEdit" ng-click="toggleEdit(task)">edit</a>
+				</div>
+				<a class="task-item finish-edit task-save" ng-show="task.isEdit" ng-click="saveTask(task)">save</a>
+				<a class="task-item finish-edit task-cancel" ng-show="task.isEdit" ng-click="toggleEdit(task)">cancel</a>
+				<div class="task-item task-each-time">{{task.time}}</div>
+				<a class="task-delete task-button" ng-click="deleteTask(task)">delete</a>
+			</li> <!-- /each-task -->
+		</ul> <!-- /list-block -->
+
+	</section> <!-- /container-main -->
+</main>	

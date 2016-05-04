@@ -1,0 +1,485 @@
+* {
+	-webkit-box-sizeing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	line-height: 1.6;
+	background-color: #fff;
+}
+
+body, input, select, button {
+	font-family: sans-serif;
+	font-size: 16px;
+	color: #222;
+}
+
+/*-----------------------------------*/
+/* GLOBAL STYLES */
+
+a {
+	color: #888;
+	text-decoration: none;
+	transition: all 0.2s linear;
+}
+
+a:hover, a:focus {
+	color:inherit;
+	transition: all 0.2s ease-in;
+}
+
+strong, b {
+	font-weight: 700;
+}
+
+em, i {
+	font-style: italic;
+}
+
+sub, sup{
+	font-size: 65%;
+	position: relative;
+	line-height: 0;
+}
+
+sup {
+	top: -8px;
+}
+
+sub {
+	bottom: -8px;
+}
+
+p {
+	margin: 0 0 15px 0;
+}
+
+h6 {
+	font-size: 110%;
+}
+
+h5 {
+	font-size: 120%;
+}
+
+h4 {
+	font-size: 130%;
+}
+
+h3 {
+	font-size: 140%;
+}
+
+h2 {
+	font-size: 160%;
+}
+
+h1 {
+	font-size: 180%;
+}
+
+h1, h2, h3, h4, h5, h6{
+	padding: 0 0 15px 0;
+}
+
+ol, ul{
+	padding-left: 20px;
+	list-style-position: inside;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+img, video, svg {
+	max-width: 100%;
+	height: auto;
+}
+
+input[type="submit"] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+}
+
+input[type="submit"], button {
+	cursor: pointer;
+}
+
+textarea {
+	vertical-align: top;
+	min-height: 150px;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+th, td{
+	border: 1px solid;
+	padding: 20px;
+}
+
+th{
+	font-weight: 700;
+}
+
+/*----------------------------------*/
+/* HELPERS floats and clearing*/
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear:both;
+}
+
+.clear {
+	clear:both;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float:right;
+}
+
+/* Helpers typography */
+
+.heading-primary {
+	font-size: 220%;
+	text-align: center;
+	padding: 40px 0;
+}
+
+.heading-secondary {
+	font-size: 160%;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+
+.sub-heading {
+	font-style: italic;
+	text-align: center;
+	padding: 0 0 20px 0;
+}
+
+.heading-block [class |="heading"] {
+	padding-bottom: 0;
+}
+
+.ul-base {
+	padding: 0;
+	list-style-type: none;
+}
+
+.font-small {
+	font-size: 90%;
+}
+
+.font-smaller {
+	font-size: 80%;
+}
+
+.font-smallest {
+	font-size: 70%;
+}
+
+.font-large {
+	font-size: 110%;
+}
+
+.font-larger {
+	font-size: 120%;
+}
+
+.font-largest {
+	font-size: 130%;
+}
+
+/* Helpers: Centering */
+
+.center {
+	text-align: center;
+}
+
+.center-element {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.vertical-center {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.dead-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+/* Helpers: Forms */
+
+.field-block {
+	padding: 10px 0;
+}
+
+.label {
+	text-align: center;
+	padding: 0 0 10px 0;
+	display: block;
+	position: relative;
+}
+
+.label-required:after {
+	content: "*";
+	color: red;
+	margin: 0 0 0 5px;
+}
+
+/* Helpers: Buttons */
+
+.button {
+	color: #fff;
+	background-color: #777;
+	text-transform: uppercase;
+	padding: 6.5px 20px;
+	display: inline-block;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+
+.button:hover, .button:focus {
+	background-color: #444;
+	transition: all 0.2s ease-in;
+}
+
+/* Helpers Full width */
+
+.full-width {
+	display: block;
+	width: 100%;
+}
+
+/*-----------------------------------------*/
+/* GRID */
+
+.grid-parent {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.grid-parent:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.grid-child {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/*-----------------------------------------*/
+/* CONTAINERS */
+
+.container-full, .container-main, .container-mid, .container-sm, .container-xs {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.container-full {
+	max-width: 100%;
+}
+
+.container-main {
+	max-width: 1200px;
+}
+
+.container-mid {
+	max-width: 900px;
+}
+
+.container-sm {
+	max-width: 700px;
+}
+
+.container-xs {
+	max-width: 600px;
+}
+
+/*-----------------------------------------*/
+/* TODOLIST PAGE */
+
+.input-text {
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border: 1px solid #bbb;
+}
+
+.input-text:focus{
+	border: 1px solid #888;
+	outline: 0;
+}
+
+/* Add Task Block */
+
+.add-task-block {
+	text-align: center;
+	font-size: 16px;
+	padding: 20px 0 20px 0px;
+}
+
+.task-input {
+	float:left;
+	width: 60%
+}
+
+@media only screen and (min-width: 440px) {
+	.task-input {
+		width: 70%
+	}
+}
+
+/* Task List Block */
+
+.list-block {
+	text-align: center;
+}
+
+.task-each {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 5px 0;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+}
+
+.task-each a {
+	cursor: pointer;
+}
+
+.task-each-number {
+	width: 10%;
+	text-align: left;
+	display: inline-block;
+}
+
+.task-each-time {
+	width: 80%;
+	float: left;
+	text-align: left;
+}
+
+.task-each-description-block {
+	width: 88%;
+	display: inline-block;
+}
+
+.task-each-description {
+	width: 80%;
+	float: left;
+}
+
+.task-each-input {
+	width: 100%;
+}
+
+.task-edit {
+	color: #7B7BE6;
+	transition: all 0.2s linear;
+}
+
+.task-edit:hover {
+	color: #4040E6;
+	transition: all 0.2s ease-in;
+}
+
+.finish-edit {
+	width: 50%;
+	float: left;
+}
+
+.task-button {
+	width: 20%;
+	text-align: right;
+	display: inline-block;
+	padding-right: 17px;
+}
+
+.task-item {
+	margin: 2px 0;
+}
+
+.task-save {
+	color: #98CE85;
+	transition: all 0.2s linear;
+}
+
+.task-save:hover {
+	color: #1D9C1D;
+	transition: all 0.2s ease-in;
+}
+
+.task-cancel {
+	color: #C76F6F;
+	transition: all 0.2s linear;
+}
+
+.task-cancel:hover {
+	color: #F35555;
+	transition: all 0.2s ease-in;
+}
+
+.task-delete {
+	color: #C76F6F;
+	transition: all 0.2s linear;
+}
+
+.task-delete:hover {
+	color: #F35555;
+	transition: all 0.2s ease-in;
+}
+
+
+/*-----------------------------------------*/
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 900px) {
+	
+}
+
+@media only screen and (min-width: 700px) {
+	
+}
+
+@media only screen and (min-width: 600px) {
+	
+}
