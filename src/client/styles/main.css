@@ -529,6 +529,10 @@ th{
 		display: inline-block;
 		padding: 6px 0;
 	}
+
+	.task-delete {
+		float: right;
+	}
 }
 
 
